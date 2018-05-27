@@ -1,0 +1,97 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0, minimum-scale=1.0, user-scalable=0, initial-scale=1.0, width=device-width" />
+    <meta name="format-detection" content="telephone=no, email=no, date=no, address=no">
+    <title>Hello APP</title>
+    <link rel="stylesheet" type="text/css" href="../css/api.css" />
+    <link rel="stylesheet" type="text/css" href="../css/aui.css" />
+    <style type="text/css">
+        .aui-bar-dark{
+            background-color: #E65A65;
+        }
+        #cdRom{
+            text-align: center;
+            padding: 50px 0px;
+        }
+        #cdRom img{
+            width: 200px;
+        }
+        .rangeWidth{
+            width: 90%;
+            margin: 0 auto;
+        }
+        #btns{
+            width: 50%;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<header class="aui-bar aui-bar-nav aui-bar-dark">
+    <a class="aui-pull-left">
+        <span class="aui-iconfont aui-icon-left"></span>返回
+    </a>
+    <div class="aui-title">正在播放小苹果</div>
+</header>
+<body>
+
+    <!-- cd光盘 -->
+    <div id="cdRom">
+        <img src="../image/cd.jpg" alt="">
+    </div>
+    <!-- 音乐进度 -->
+    <div class="aui-range rangeWidth">
+        <!-- 最大值为100, 最小值为1 -->
+        <input type="range" value="1" max="100" min="1" class="aui-range-primary demo" id="musicRange" />
+    </div>
+
+    <div id="btns">
+        <p style="margin-bottom: 5px;"><div class="aui-btn aui-btn-info aui-btn-block">开启播放</div></p>
+        <p style="margin-top: 5px;"><div class="aui-btn aui-btn-danger aui-btn-block">暂停播放</div></p>
+    </div>
+
+</body>
+<script type="text/javascript" src="../script//api.js"></script>
+<script type="text/javascript" src="../script/aui.js"></script>
+<script type="text/javascript" src='../script/jQuery.js'></script>
+<script type="text/javascript" src='../script/jQueryRotate.js'></script>
+<script type="text/javascript">
+    var angle = 0;// 定义光盘的旋转角度
+    var dt = null;// 定时器对象
+
+    /* 让光盘旋转起来 */
+    function cdRotate(){
+        // 判断dt是否为null, 如果不为null代表当前已经开启了定时器功能
+        if (dt != null) {
+            clearInterval(dt);
+        }
+
+        dt = setInterval(function(){
+            angle += 3;// 每次旋转的角度加3度
+            $("#cdRom img").rotate(angle);
+        }, 100);
+
+    }
+    // 让音乐响起来
+    function fnStart(){
+        // 加载插件库
+        var netAudio = api.require("netAudio");
+        netAudio.play({
+            path: 'http://music.163.com/#/song?id=5284163'
+        }, function(ret, err){
+            // 播放的回调方法
+              
+        };
+        cdRotate();// 音乐响 光盘动
+    }
+    
+    apiready = function(){
+        fnStart();//当播放器页面加载的时候, 让音乐响起来
+    }
+        
+</script>
+
+</html>
