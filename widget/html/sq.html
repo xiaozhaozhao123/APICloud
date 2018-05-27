@@ -1,0 +1,107 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0, minimum-scale=1.0, user-scalable=0, initial-scale=1.0, width=device-width" />
+    <meta name="format-detection" content="telephone=no, email=no, date=no, address=no">
+    <title>Hello APP</title>
+    <link rel="stylesheet" type="text/css" href="../css/api.css" />
+    <link rel="stylesheet" type="text/css" href="../css/aui.css" />
+    <style type="text/css">
+        
+    </style>
+</head>
+
+<body>
+    <div class="aui-content">
+        <ul class="aui-waterfall" id="aui-waterfall"> 
+
+       
+            <li> 
+                <div class="aui-waterfall-header">
+                    <img src="../image/1.png" />
+                </div>
+                <div class="aui-waterfall-body">
+                    远方的远方还是远方
+                </div>
+                <div class="aui-waterfall-footer"> 
+                    <span class="aui-text-info">
+                        凤凰传奇
+                    </span>
+                    <span class="aui-pull-right">
+                        <i class="aui-iconfont aui-icon-likefill aui-text-warning"></i>
+                    </span>
+                </div> 
+            </li>
+         
+            <li> 
+                <div class="aui-waterfall-header">
+                    <img src="../image/2.png" />
+                </div>
+                <div class="aui-waterfall-body">
+                    小苹果
+                </div>
+                <div class="aui-waterfall-footer"> 
+                    <span class="aui-text-info">
+                        筷子兄弟
+                    </span>
+                    <span class="aui-pull-right">
+                        <i class="aui-iconfont aui-icon-likefill aui-text-warning"></i>
+                    </span>
+                </div> 
+            </li>
+
+            <li> 
+                <div class="aui-waterfall-header">
+                    <img src="../image/3.png" />
+                </div>
+                <div class="aui-waterfall-body">
+                    最炫名族风
+                </div>
+                <div class="aui-waterfall-footer"> 
+                    <span class="aui-text-info">
+                        凤凰传奇
+                    </span>
+                    <span class="aui-pull-right">
+                        <i class="aui-iconfont aui-icon-likefill aui-text-warning"></i>
+                    </span>
+                </div> 
+            </li>
+
+            <li> 
+                <div class="aui-waterfall-header">
+                    <img src="../image/4.png" />
+                </div>
+                <div class="aui-waterfall-body">
+                    披着羊皮的狼
+                </div>
+                <div class="aui-waterfall-footer"> 
+                    <span class="aui-text-info">
+                        刀郎
+                    </span>
+                    <span class="aui-pull-right">
+                        <i class="aui-iconfont aui-icon-likefill aui-text-warning"></i>
+                    </span>
+                </div> 
+            </li>
+
+        </ul> 
+    </div>
+</body>
+<script type="text/javascript" src="../script/api.js"></script>
+<script type="text/javascript" src="../script/aui.js"></script>
+<script type="text/javascript" src="../script/aui-waterfall.js" ></script>
+<script type="text/javascript">
+    $aui.waterfall($api.byId("aui-waterfall"),{
+        col:2,//列数
+        padding:10,//容器内边距
+        space:10//列间距
+    });
+
+    apiready = function(){
+        
+    }
+</script>
+
+</html>
